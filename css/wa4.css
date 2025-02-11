@@ -43,7 +43,7 @@ html {
     float: right;
   }
 
-  /* New ruleset */
+  /* New ruleset WITH NEW CARD (.card and .card-charles*/ 
 
   .card footer, .card header, .card-charles footer, .card-charles header{ /* total computed height must be 50x */    
     height: 3em; /* height of 30px? not sure about the 30px content height*/
