@@ -2,9 +2,9 @@
 
 body {
     margin: 0;
-  }
+    }
   
-  html {
+html {
     font-family: 'Helvetica neue', Arial, 'sans serif';
     font-size: 10px;
     background-color: #ccc;
@@ -19,7 +19,7 @@ body {
   
   /* Rulesets to be matched up with selectors */
   
-  .card{
+  .card, .card-charles{
     width: 35em;
     height: 22em;
     margin: 5em auto;
@@ -27,18 +27,53 @@ body {
     border: 0.2em solid black;
     border-radius: 1.5em;
   }
-  
-  .card footer{
+
+  .card header, .card-charles header{
     background-image: linear-gradient(to bottom,rgba(0,0,0,0.1), rgba(0,0,0,0));
     border-radius: 1.5em 1.5em 0 0;
   }
   
-  .card header{
+  .card footer, .card-charles footer{
     background-image: linear-gradient(to bottom,rgba(0,0,0,0), rgba(0,0,0,0.1));
     border-radius: 0 0 1.5em 1.5em;
   }
   
-  .card article img{
+  .card article img, .card-charles article img{
     max-height: 100%;
     float: right;
+  }
+
+  /* New ruleset */
+
+  .card footer, .card header, .card-charles footer, .card-charles header{ /* total computed height must be 50x */    
+    height: 3em; /* height of 30px? not sure about the 30px content height*/
+    padding: 1em; /* padding of 10x */
+
+  }
+
+  .card h2, .card p, .card-charles h2, .card-charles p {
+    margin: 0; /* margin set to 0*/
+  }
+
+  .card article, .card-charles article {
+    height: 12em; /* height of 120x to stop image from overflowing*/
+    background-color: rgb(0, 0, 0, .25); /* semi dark background */
+  }
+
+  .card h2, .card-charles h2{
+    font-size: 2em; /* font size of 20 px */
+    line-height: 1.5em; /* placing "Chris Mills in the center of h2 - unsure about the content height of 30px*/
+  }
+
+  .card footer p,  .card-charles footer p  {
+    font-size: 1.5em; /* 15px font size for the footer p */
+    line-height: 1.5em; /* placing the footer in the center - idk about 30px center height - did 50px - 30px - 10px to get .625em for line height */
+    text-align: center;
+  }
+
+  .card article p, .card-charles article p  {
+ /* padding to the left to align with h2 */
+    padding-left: 1em;
+    padding-top: 1em;
+    color: rgb(236, 231, 231, .90) /* set color to white ish to make it easier to read */
   }
