@@ -10,11 +10,11 @@ html {
 
 body {
     width: 100rem; 
-    height: 62.5rem; /*  */
+    height: 62.5rem; 
     position: relative;
 }
 
-.background {
+.background { /*  this is the background picture */
     position: absolute;
     width: 90em; 
     height: 52.5em; 
@@ -22,7 +22,7 @@ body {
     background-size: 90%;
 }
 
-.comment {
+.comment { /*  this is one of the top pictures - this is the right centered picture of a radio message during the race*/
     position: absolute;
     width: 70em; 
     height: 62.5em; 
@@ -33,7 +33,7 @@ body {
     
 }
 
-.penalty {
+.penalty { /*  this is one of the top pictures - this is the top centered picture of a penalty in the race */
     position: absolute;
     width: 80em; 
     height: 62.5em; 
@@ -41,7 +41,7 @@ body {
     background-size: 45%;
 }
 
-.grid {
+.grid { /*  this is one of the top pictures - this the left centered pictured of the players in F1*/
     position: absolute;
     width: 100em; 
     height: 62.5em; 
