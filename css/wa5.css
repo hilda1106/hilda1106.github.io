@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px; 
+}
+
+body {
+    width: 100rem; 
+    height: 62.5rem; /*  */
+    position: relative;
+}
+
+.background {
+    position: absolute;
+    width: 90em; 
+    height: 52.5em; 
+    background: url(/img/wa5/f1-race.png) left top no-repeat;
+    background-size: 90%;
+}
+
+.comment {
+    position: absolute;
+    width: 70em; 
+    height: 62.5em; 
+    background: url(/img/wa5/f1comment.jpeg) no-repeat;
+    background-size: 15%;
+    left:70.5em;
+    top: 17em;
+    
+}
+
+.penalty {
+    position: absolute;
+    width: 80em; 
+    height: 62.5em; 
+    background: url(/img/wa5/f1penalty.png) top center no-repeat;
+    background-size: 45%;
+}
+
+.grid {
+    position: absolute;
+    width: 100em; 
+    height: 62.5em; 
+    background: url(/img/wa5/f1-grid.png) left top no-repeat;
+    background-size: 10%;
+    left:0em;
+    top: 2em;
+}
