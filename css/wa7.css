@@ -26,18 +26,15 @@ h1 {
 }
 
 img{
-    width: auto;
+    width: 21vw;
     height: 30vh;
-    transition: background-color 1s;
+    transition: width 5s, height 4s;
 }
 
 img:hover {
-    background-color: purple;
-
+    width: 40vw;
+    height: 50vh;
 }
-
-
-
 
 #red-ball{
     background-color: rgb(247, 0, 255);
