@@ -2,7 +2,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: blanchedalmond;
+    background-color: rgb(138, 195, 136);
 }
 nav{
     height: 50vh;
@@ -10,27 +10,72 @@ nav{
     flex-direction: row;
     justify-content: space-between;
     height:20px;
-    background-color: blueviolet;
+    background-color: rgb(230, 146, 236);
 }
 nav a{
     width:10vw;
     text-align: center;
     text-decoration: none;
-    color:black;
+    color:rgb(171, 245, 226);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+h1 {
+    color:rgb(255, 4, 226);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
 
 img{
-    width:30vw;
+    width: auto;
     height: 30vh;
+    transition: background-color 1s;
 }
 
+img:hover {
+    background-color: purple;
+
+}
+
+
+
+
 #red-ball{
-    background-color: crimson;
-    width: 20px;
-    height:20px;
+    background-color: rgb(247, 0, 255);
+    width: 25px;
+    height:25px;
     border-radius: 50%;
     position: absolute;
-    left:5vw;
+    left:0vw;
     top:0;
+    animation-name: ball2move;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes ball2move{
+    0% { 
+        translate: 0 0;
+
+    }
+    20% {
+        translate: 15vw 49vw;
+
+    }
+    40% {
+        translate: 49vw 49vw;
+    }
+    60% {
+        translate: 15vw 49vw;
+
+    }
+    80% {
+        translate: 15vw 0vw;
+        
+    }
+    100% {
+        translate: 0 0;
+
+    }
+
+
 }
