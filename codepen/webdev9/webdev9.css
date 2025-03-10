@@ -24,9 +24,9 @@ body{
   width: 10px;
   height: 10px;
   position: absolute;
-  background: teal;
+  background: rgb(0, 47, 86);
   border-radius: 50%;
-  box-shadow: 0 0 10px 10px teal;
+  box-shadow: 0 0 10px 10px rgb(235, 217, 126);
   top: -5px;
   left: -5px;
   animation: breathe 16s infinite;
@@ -36,7 +36,7 @@ body{
   height: 125px;
   width: 125px;
   color: white;
-  background: teal;
+  background: rgb(0, 47, 86);
   text-align: center;
   font-size: 1.5em;
   display: flex;
@@ -46,7 +46,7 @@ body{
 }
 span{
   position: absolute;
-  color: rgba(255, 255, 255, 0);
+  color: rgb(0, 47, 86);
 }
 .span1{
   animation: words1 16s infinite;
