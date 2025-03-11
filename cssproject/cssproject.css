@@ -10,24 +10,53 @@ html {
     padding: 20px; 
   }
 
-table {
-    width:400px;
-    background-color: white;
-}
-
-table, th, td {
-  border: .5px solid black;
-  width:600px;
-  align-content:center; 
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-th, td {
-  padding: 10px;
-
-}
-
-td {
-    width:100px;
+  body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
+    background-color: #f5f5f5;
+    margin: 20px;
+    padding: 20px;
+}
+
+.concert-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.concert-header {
+    grid-column: span 2; 
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.concert-item {
+    background-color: #ecf0f1;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.concert-item:hover {
+    background-color: #1a293c;
+}
+
+.concert-item a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.concert-item a:hover {
+    color: #e74c3c;
 }
