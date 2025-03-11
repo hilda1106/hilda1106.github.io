@@ -1,0 +1,33 @@
+html {
+    background-color: #40bdd9b3;
+  }
+
+  h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 20px 20px;
+    background-color: #ffffff; 
+    color: rgb(0, 0, 0); 
+    padding: 20px; 
+  }
+
+table {
+    width:400px;
+    background-color: white;
+}
+
+table, th, td {
+  border: .5px solid black;
+  width:600px;
+  align-content:center; 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+th, td {
+  padding: 10px;
+
+}
+
+td {
+    width:100px;
+    text-align: center;
+}
