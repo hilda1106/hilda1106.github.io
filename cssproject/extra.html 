@@ -1,0 +1,103 @@
+
+
+
+
+        -----------old css
+        table {
+    width:400px;
+    background-color: white;
+}
+
+table, th, td {
+  border: .5px solid black;
+  width:600px;
+  align-content:center; 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+th, td {
+  padding: 10px;
+
+}
+
+td {
+    width:100px;
+    text-align: center;
+}
+---------
+
+
+
+
+
+
+
+
+    --------old html 
+
+    <div ALIGN="Center"> 
+    <table ALIGN="Center">
+        <tr>
+            <th>Concerts </th>
+            <th>Dates</th>
+          </tr>
+      <tr>
+        <td> <a href="#CONCERT 1"> CONCERT 1: COSMIC SENSORY CONVERGENCE: STELLAR VOYAGE</a> 
+        <td>April 18-19, 2025</td>
+      </tr>
+
+      <tr>
+        <td> <a href="#CONCERT 2"> CONCERT 2: QUANTUM RESONANCE EXPLORATION: VOID ECHOES</a> 
+        </td>
+        <td>May 22-23, 2025</td>
+      </tr>
+
+      <tr>
+        <td> <a href="#CONCERT 3"> CONCERT 3: INTERSPECIES HARMONIZATION: GALACTIC CHORUS</a> 
+        </td>
+        <td>June 22-23, 2025</td>
+      </tr>
+
+      <tr>
+        <td> <a href="#CONCERT 4"> CONCERT 4: TEMPORAL PARADOX PERFORMANCE: CHRONOS UNBOUND</a> 
+        </td>
+        <td>July 30-31, 2025</td>
+      </tr>
+
+      <tr>
+        <td> <a href="#CONCERT 5"> CONCERT 5: SUBATOMIC SOUND EXPLORATION: QUANTUM FREQUENCIES </a> 
+        </td>
+        <td>September 4-5, 2025</td>
+      </tr>
+
+      <tr>
+        <td> <a href="#CONCERT 6"> CONCERT 6: PSYCHONAUTIC JOURNEY: CONSCIOUSNESS EXPANSION </a> 
+        </td>
+        <td>October 11-12, 2025</td>
+      </tr>
+
+      <tr>
+        <td> <a href="#CONCERT 7"> CONCERT 7: MULTISENSORY SYNTHESIS: SYNAESTHETIC VOYAGE</a> 
+        </td>
+        <td>November 15-16, 2025</td>
+      </tr>
+
+      <tr>
+        <td> <a href="#CONCERT 8"> CONCERT 8: GRAVITATIONAL WAVE PERCUSSION: SPACETIME RIPPLES</a> 
+        </td>
+        <td>December 18-19, 2025</td>
+      </tr>
+
+      <tr>
+        <td> <a href="#CONCERT 9"> CONCERT 9: DIMENSIONAL TRANSMIGRATION: BEYOND THE VEIL</a> 
+        </td>
+        <td>January 29-30, 2025</td>
+      </tr>
+
+      <tr>
+        <td> <a href="#CONCERT 10"> CONCERT 10: UNIVERSAL ENTROPY REVERSAL: THERMODYNAMIC DEFIANCE</a> 
+        </td>
+        <td>January 1-2, 2026</td>
+      </tr>
+    </table>
+</div>
