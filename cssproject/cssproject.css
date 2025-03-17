@@ -3,42 +3,52 @@ html {
   }
 
 body {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
     margin: 40px;
     color: #ffffff;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.345);
+    
 }
-
 
 h3 { /* concert heading descriptions */
-    text-align: center;
+    color: #ebeb43;
+    font-size: 25px;
+    padding-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.concertsone { /* background color of some concerts */
+    background-color: rgb(16, 41, 63);
+    padding: 10px;
+    padding-bottom: 30px;
+    border-style:groove;
+    border-color: #ffffff72;
     margin-bottom: 20px;
-    color: #FFD700;
 }
 
-.concertsone {
-    background-color: rgb(38, 3, 33);
+.concertstwo { /* background color of some concerts */
+    background-color: rgb(62, 8, 8);
     padding: 10px;
     padding-bottom: 30px;
-    border-radius: 10%;
+    border-style:groove;
+    border-color: #ffffff72;
+    margin-bottom: 20px;
 }
 
-.concertstwo {
-    background-color: rgb(17, 125, 140);
-    padding: 10px;
-    padding-bottom: 30px;
-    border-radius: 10%;
-}
-
-.concertbox { /* right text concert */ 
+.concertbox { /* text */ 
     display: flex;
     justify-content: space-between;
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
+    font-size: 17px;
 }
 
+.concertbox strong, .concertbox em { /* text stuff , bold and italics */ 
+    color: #ebeb43da;
+}
+
+/* start of right and left text aligns */ 
 .right {
     text-align: left;
     width: 65%;
@@ -56,53 +66,88 @@ h3 { /* concert heading descriptions */
     margin-bottom: 5px;
 }
 
+/* end of left and right text aligns */ 
+
 .header {
-    background-color: rgb(16, 41, 63);
+    background-color: rgb(16, 41, 63);  
+    /* idk if i should keep the color*/ 
     padding: 10px;
+    border-style:groove;
+    border-color: #ffffff72;
+    
 }
 
-.concert-container{
-    background-color: aqua;
+.header h1{
+    font-size: 35px;
 }
 
-
-
+.header h2{
+    font-size: 30px;
+}
 
 .concert-container {
     display: grid;
     grid-template-columns: 1fr 1fr; 
-    margin: auto;
-    background: white;
-    border-radius: 15%;
 }
 
 .concert-header {
     grid-column: span 2; 
-    font-size: 24px;
-    background-color: #3498db;
-    color: white;
+    font-size: 26px;
+    background-color: rgb(62, 8, 8);
+    padding: 20px;
+    color: #ffffff;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 15px;
+    border-style:groove;
+    border-color: #f2f2f287;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 5px;
+
 }
 
 .concert-item {
-    background-color: #ecf0f1;
+    background-color: rgb(62, 8, 8);
     padding: 15px;
-    border-radius: 5px;
-    text-align: center;
+    border-radius: 15px;
+    border-style:groove;
+    border-color: #ffffff72;
     transition: 0.3s;
-    font-size: 18px;
+    align-items: center;
+    margin: 5px;
+
 }
 
 .concert-item:hover {
-    background-color: #25244d;
+    background-color: rgb(16, 41, 63);
 }
 
 .concert-item a {
-    color: rgb(0, 0, 0);
+    color: #ffffff;
+    font-size: 18px;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .concert-item a:hover { /* when hover it goes red the text */
-    color: #ff0000;
+    color:  #ebeb43;
 }
 
+footer {
+    background-color: rgb(16, 41, 63);
+    padding: 30px;
+    margin: auto;
+    margin-top: 20px;
+    border-style:groove;
+    border-color: #ffffff72;
+}
+
+
+footer a {
+    color: white;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+footer a:hover { /* when hover it goes red the text */
+    color:  #ebeb43;
+}
