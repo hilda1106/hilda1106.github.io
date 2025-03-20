@@ -1,0 +1,26 @@
+body {
+    font-family: helvetica, sans-serif;
+    width: 350px;
+    background-color: #2fa6eb;
+  }
+
+  label {
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+  }
+
+  div {
+    padding-bottom: 20px;
+  }
+
+  input[type="text"] {
+    padding: 5px;
+    width: 150px;
+  }
+
+  p {
+    background: #91d8f4;
+    color: #390303;
+    padding: 10px;
+    visibility: hidden;
+  }
