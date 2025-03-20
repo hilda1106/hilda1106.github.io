@@ -11,13 +11,13 @@ function randomValueFromArray(array){
 
 // 2. RAW TEXT STRINGS
 
-let storyText = "It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day."
+let storyText = "It was 120 fahrenheit outside, so :insertx: went for a swim in the local pool. On the way :insertx: picked up some :inserty: to snack while in the pool. One hour later,  :insertx: picked up the  :insertz: next to the pool to take home. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day."
 
-let insertX = ["Willy the Goblin", "Big Daddy", "Father Christmas"]
+let insertX = ["Big Bear Ben", "Mike the Moose", "Danny the Dear"]
 
-const insertY = ["the soup kitchen", "Disneyland", "the White House"]
+const insertY = ["pho", "sushi", "burritos"]
 
-const insertZ = ["spontaneously combusted", "melted into a puddle on the sidewalk", "turned into a slug and crawled away"]
+const insertZ = ["umbrella", "towel", "bike"]
 
 // 3. EVENT LISTENER AND PARTIAL FUNCTION DEFINITION
 
