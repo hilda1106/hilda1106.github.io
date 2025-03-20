@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background-color: blueviolet;
+            border: 5px solid pink;
+            height: 200px;
+            width: 200px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="name">Hello!</h1>
+    <button>Click me!</button>
+    <div class="box"></div>
+    <script>
+        let box = document.querySelector('.box');
+        box.addEventListener('click', changeColor);
+        
+        function changeColor() {
+            box.style = "background-color: red; border: 20px dotted purple";
+
+        }
+
+    
+    </script>
+</body>
+</html>
