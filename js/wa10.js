@@ -30,7 +30,7 @@ let yItem = randomValueFromArray(insertY);
 let zItem = randomValueFromArray(insertZ); 
 newStory = newStory.replaceAll(':insertx:',xItem); 
 newStory = newStory.replaceAll(':inserty:',yItem); 
-newStory = newStory.replaceAll(':insertz:',zItem);  //this is a method
+newStory = newStory.replaceAll(':insertz:',zItem);  //this is a method //
 
   if(customName.value !== '') {
     const name = customName.value;
