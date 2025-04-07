@@ -14,7 +14,7 @@ const alternative = { 'pic1.JPG' : 'snowy mountains','pic2.JPG' : 'sunset from t
 /* Looping through images */
 
 for (const image of images) { const newImage = document.createElement('img');
-    newImage.setAttribute('src', `/js/imgwa11/${image}`);
+    newImage.setAttribute('src',`/wa/wa11/img/${image}`);
     newImage.setAttribute('alt', alternative[image]);
     thumbBar.appendChild(newImage);
     newImage.addEventListener('click', e => {
