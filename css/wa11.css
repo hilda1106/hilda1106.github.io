@@ -1,6 +1,11 @@
+html {
+  background-image: url(/img/wa11/starnight\ copy.jpeg);
+}
+
 h1 {
   font-family: helvetica, arial, sans-serif;
   text-align: center;
+  color: rgb(255, 255, 255);
 }
 
 body {
