@@ -26,8 +26,15 @@
       </div>
       <script>
 
+            let current = {
+                question: "",
+                answer: ""
+            };
+
             var newBtn = document.querySelector('#js-new-quote').addEventListener('click', getQuote);
-            var answerBtn = document.querySelector('#js-tweet').addEventListener('click', displayAnswer);
+           // var answerBtn = document.querySelector('#js-tweet').addEventListener('click', displayAnswer);
+            var answerBtn = document.querySelector('#js-tweet').addEventListener('click', () => displayAnswer(current.answer));
+
 
 
             var endpoint = "https://trivia.cyberwisp.com/getrandomchristmasquestion";
@@ -54,14 +61,19 @@
             }
 
             function displayQuote(quote) {
-                const quoteText = document.querySelector('js-quote-text');
+                const quoteText = document.querySelector('#js-quote-text');
                 quoteText.textContent = quote;
             }
 
-            function displayQuote(answer) {
-                const answerText = document.querySelector('js-answer-text');
+            function displayAnswer(answer) {
+                const answerText = document.querySelector('#js-answer-text');
                 answerText.textContent = answer;
             }
+
+            getQuote();
+
+    
+        
 
 
 
