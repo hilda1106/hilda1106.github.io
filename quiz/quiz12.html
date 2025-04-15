@@ -49,9 +49,7 @@
        const motherNames = cats.map(cat => cat.name);
 
        if (motherNames.length === 1) { motherInfo += motherNames[0] + '.'; 
-       } else { const last = motherNames.pop();
-            motherInfo += `${motherNames.join(', ')}, and ${last}.`;
-        }
+       } else 
 
         cats.forEach(cat => {
             cat.kittens.forEach(kitten => { 
