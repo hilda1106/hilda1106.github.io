@@ -9,75 +9,112 @@
 </head>
 <body>
     <div class="app">
-        <header>Random Christmas Trivia</header>
+        <header>Learn Cat Facts!</header>
         <section class="quotes">
-          <div class="quote-text" id="js-quote-text"></div>
+          <div class="quote-text" id="js-quote-text"> </div>
           <div class="quote-text" id="js-answer-text"></div>
         </section>
-        <section class="controls" >
-          <button type="button" id="js-new-quote" class="new-quote button">
-            Generate a new bit of trivia!
-          </button>
+        <section class="controls">
           <button type="button" id="js-tweet" class="twitter button">
-            Show me the answer!
+            Reveal Fact
           </button>
+          <br>
+          <button type="button" id="js-new-quote" class="new-quote button">
+            New Cat Fact/Clear Current Fact
+          </button>
+
+          <button type="button" id="cat" class="cat button">
+            Cat gif (click me!)
+          </button>
+
+          
+          
           <!-- <a class="answer button" id="js-tweet" target="_blank" rel="noreferrer">Show me the answer!</a> -->
         </section>
       </div>
-      <script>
 
-            let current = {
-                question: "",
-                answer: ""
-            };
-
-            var newBtn = document.querySelector('#js-new-quote').addEventListener('click', getQuote);
-           // var answerBtn = document.querySelector('#js-tweet').addEventListener('click', displayAnswer);
-            var answerBtn = document.querySelector('#js-tweet').addEventListener('click', () => displayAnswer(current.answer));
+      <div id="popup">
+        <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Cute kitten gif" />
+        <button id="closePopup" class="close-btn">Close</button>
+      </div>
 
 
 
-            var endpoint = "https://trivia.cyberwisp.com/getrandomchristmasquestion";
+  <script>
 
-            async function getQuote() {
-                try {
-                    const response = await fetch(endpoint);
+    let current = {
+        question: "Did you know?",
+        answer: ""
+    };
 
-                    if (!response.ok) {
-                        throw Error(response.statusText);
-                    }
+    document.querySelector('#js-new-quote').addEventListener('click', getQuote);
+    document.querySelector('#js-tweet').addEventListener('click', () => displayAnswer(current.answer));
 
-                    const json = await response.json();
-                    //console.log(json);
-                    displayQuote(json.question);
 
-                    current.question = json.question;
-                    current.answer = json.answer;
 
-                } catch(err) {
-                    console.log(err);
-                    alert('Fail');
-                }
+    var endpoint = "https://meowfacts.herokuapp.com/";
+
+    async function getQuote() {
+        try {
+            const response = await fetch(endpoint);
+
+            if (!response.ok) {
+                throw Error(response.statusText);
             }
 
-            function displayQuote(quote) {
-                const quoteText = document.querySelector('#js-quote-text');
-                quoteText.textContent = quote;
-            }
+            const json = await response.json();
+            //
+            const fact = json.data[0];
+            //
+            current.answer = fact;
 
-            function displayAnswer(answer) {
-                const answerText = document.querySelector('#js-answer-text');
-                answerText.textContent = answer;
-            }
+            //displayQuote("Did you know?");
+            //current.question = "Did you know?";
 
-            getQuote();
+            document.querySelector('#js-quote-text').textContent = "Did you know?";
+            document.querySelector('#js-answer-text').textContent = ""; 
+            
 
+        } catch(err) {
+            console.log(err);
+            alert('Fail to load cat facts');
+        }
+    }
+
+    function displayQuote(quote) {
+        const quoteText = document.querySelector('#js-quote-text');
+        quoteText.textContent = quote;
+    }
+
+    function displayAnswer(answer) {
+        const answerText = document.querySelector('#js-answer-text');
+        answerText.textContent = answer;
+    }
+
+    getQuote();
+
+
+    const popup = document.getElementById('popup');
+    const button = document.getElementById('cat');
+    const closeBtn = document.getElementById('closePopup');
+
+    button.addEventListener('click', () => {
+      popup.style.display = 'block';
+    });
+
+    closeBtn.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+
+
+
+
+
+
+</script>
     
-        
-
-
-
-      </script>
+    
+    
 
 </body>
 </html>
