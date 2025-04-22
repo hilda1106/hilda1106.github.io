@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> hello! check out the console</h1>
+    <script>
+        // Problem 1
+        const employeesData = [
+            { firstName: "Sam", department: "Tech", designation: "Manager", salary: 40000, raiseEligible: true},
+            { firstName: "Mary",department: "Finance", designation: "Trainee", salary: 18500, raiseEligible: true},
+            { firstName: "Bill", department: "HR", designation: "Executive", salary: 21200, raiseEligible: false}
+        ];
+        // Problem 1 on the console: console.log("problem 1", employeesData); ( how i did it)
+
+        // problem 2
+        const company = { 
+            companyName: "Tech Stars", 
+            website: "www.techstars.site", 
+            employees: employeesData
+        };
+        // problem 2 on the comsole: console.log("problem 2", company);
+
+        // problem 3 
+        employeesData.push(
+            {firstName: "Anna", department: "Tech", designation: "Executive", salary: 25600, raiseEligible: false}
+        );
+        // problem 3 on the consile, this reflects the changes done on problem 1 and 2: 
+        // 1 -- console.log("problem 1", employeesData);
+        // 2 --- console.log("problem 2", company);
+
+        // problem  4
+        const totalSalary = company.employees.reduce((sum, employee) => sum + employee.salary, 0);
+        // problem 4 on the console: console.log("Problem 4--","Total Salary:", totalSalary);
+
+        // problem 5
+        function applyRaises(company) {
+            company.employees.forEach(employee => {
+                if (employee.raiseEligible) {
+                    employee.salary *= 1.10; 
+                    employee.raiseEligible = false; }
+                });
+            }
+        applyRaises(company);
+        //  problem 5 on the comsole: console.log("problem 5", company);
+
+        // problem 6
+        const workingFromHome = ['Anna', 'Sam'];
+        company.employees.forEach(e => {
+            e.wfh = workingFromHome.includes(e.firstName);
+        });
+        //  problem 6 on the comsole: console.log("problem 6", company);
+      
+
+
+    </script>
+</body>
+</html>
