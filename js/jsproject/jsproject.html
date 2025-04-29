@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="jsproject.css">
+</head>
+<body>
+    <h1>Can you type 123-456-7890? </h1>
+    <h2> enter each number in less than 2 seconds</h2>
+
+    <div id="timer">2</div>
+    <input type="text" id="phone" disabled placeholder="Enter 10 digits...">
+    <div class="keypad" id="keypad"></div>
+    <div id="message"></div>
+    
+
+    <script>
+        const phoneInput = document.getElementById('phone');
+        const keypad = document.getElementById('keypad');
+        const timerDisplay = document.getElementById('timer');
+        const message = document.getElementById('message');
+    
+        const totalNumbers = 10; // numbers needed in the keypad
+        const allNumbers = ['0','1','2','3','4','5','6','7','8','9'];
+        let timeLeft = 2; 
+        let timer; 
+    
+     
+        function createKeypad() { // sort the numerbs in the keypad
+          keypad.innerHTML = ''; 
+          const shuffled = [...allNumbers].sort(() => Math.random() - 0.5);
+    
+          shuffled.forEach(digit => { 
+            const button = document.createElement('button');
+            button.className = 'key';
+            button.textContent = digit;
+    
+            
+            button.addEventListener('click', () => {
+            
+              if (phoneInput.value.length < totalNumbers) {
+                phoneInput.value += digit;
+                checkForWin(); 
+                resetTimer();  
+                createKeypad(); 
+              }
+            });
+    
+            keypad.appendChild(button);
+          });
+        }
+    
+        function startTimer() { // the amount of time in each round of having to add your numeber ( countdown)
+          timeLeft = 2;
+          timerDisplay.textContent = timeLeft;
+    
+          timer = setInterval(() => {
+            timeLeft--;
+            timerDisplay.textContent = timeLeft;
+    
+          
+            if (timeLeft === 0) { // if user doesnt make the number in time
+              clearInterval(timer);
+              phoneInput.value = '';
+              message.textContent = 'not fast enough! Start over!';
+              createKeypad();
+            }
+          }, 1000);
+        }
+    
+        function resetTimer() {
+          clearInterval(timer);
+          startTimer();
+          message.textContent = '';
+        }
+    
+        function checkForWin() {
+          if (phoneInput.value.length === totalNumbers) {
+            clearInterval(timer);
+            message.textContent = 'You did it!';
+            disableKeypad();
+          }
+        }
+    
+        function disableKeypad() {
+          const buttons = document.querySelectorAll('.key');
+          buttons.forEach(btn => btn.disabled = true);
+        }
+    
+        createKeypad();
+        startTimer();
+    
+        phoneInput.addEventListener('keydown', e => e.preventDefault());
+        phoneInput.addEventListener('paste', e => e.preventDefault());
+      </script>
+</body>
+</html>
