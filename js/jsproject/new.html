@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Worst Phone Input</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: pink;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    #phone {
+      font-size: 24px;
+      width: 250px;
+      padding: 10px;
+      text-align: center;
+      border: 2px solid purple;
+      background-color: yellow;
+      margin-bottom: 20px;
+    }
+
+    #timer {
+      font-size: 24px;
+      font-weight: bold;
+      color: red;
+      margin-bottom: 20px;
+    }
+
+    .keypad {
+      display: grid;
+      grid-template-columns: repeat(3, 60px);
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .key {
+      background-color: red;
+      color: white;
+      font-size: 20px;
+      padding: 15px;
+      border: none;
+      cursor: pointer;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Enter Your Phone Number (Fast!)</h1>
+
+  <div id="timer">3</div>
+  <input type="text" id="phone" disabled placeholder="Enter 10 digits...">
+  <div class="keypad" id="keypad"></div>
+  <div id="message"></div>
+
+  <script>
+    const phoneInput = document.getElementById('phone');
+    const keypad = document.getElementById('keypad');
+    const timerDisplay = document.getElementById('timer');
+    const message = document.getElementById('message');
+
+    const totalDigits = 10; // How many digits the user must enter
+    const allDigits = ['0','1','2','3','4','5','6','7','8','9'];
+    let timeLeft = 3; // Timer starts at 3 seconds
+    let timer; // Will store the interval
+
+    // Create and shuffle the keypad
+    function createKeypad() {
+      keypad.innerHTML = ''; // Clear previous buttons
+      const shuffled = [...allDigits].sort(() => Math.random() - 0.5);
+
+      shuffled.forEach(digit => {
+        const button = document.createElement('button');
+        button.className = 'key';
+        button.textContent = digit;
+
+        // When user clicks a number
+        button.addEventListener('click', () => {
+          // Add digit if not finished
+          if (phoneInput.value.length < totalDigits) {
+            phoneInput.value += digit;
+            checkForWin(); // Check if user completed input
+            resetTimer();  // Restart the 3-second countdown
+            createKeypad(); // Reshuffle keypad
+          }
+        });
+
+        keypad.appendChild(button);
+      });
+    }
+
+    // Start countdown timer
+    function startTimer() {
+      timeLeft = 3;
+      timerDisplay.textContent = timeLeft;
+
+      timer = setInterval(() => {
+        timeLeft--;
+        timerDisplay.textContent = timeLeft;
+
+        // Time's up! Reset input and show message
+        if (timeLeft === 0) {
+          clearInterval(timer);
+          phoneInput.value = '';
+          message.textContent = '⏰ Too slow! Start over!';
+          createKeypad();
+        }
+      }, 1000);
+    }
+
+    // Reset the countdown timer to 3 seconds
+    function resetTimer() {
+      clearInterval(timer);
+      startTimer();
+      message.textContent = '';
+    }
+
+    // Check if the user has entered all digits
+    function checkForWin() {
+      if (phoneInput.value.length === totalDigits) {
+        clearInterval(timer);
+        message.textContent = '🎉 You did it!';
+        disableKeypad();
+      }
+    }
+
+    // Disable buttons after winning
+    function disableKeypad() {
+      const buttons = document.querySelectorAll('.key');
+      buttons.forEach(btn => btn.disabled = true);
+    }
+
+    // Initial setup
+    createKeypad();
+    startTimer();
+
+    // Prevent typing or pasting manually
+    phoneInput.addEventListener('keydown', e => e.preventDefault());
+    phoneInput.addEventListener('paste', e => e.preventDefault());
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Javascript Project</title>
+  <link rel="stylesheet" href="jsproject.css">
+</head>
+<body>
+
+  <div class="game-container" id="gameContainer">
+    <h1>Enter your phone number</h1>
+
+    <div id="timer">3</div>
+    <input type="text" id="phone" disabled placeholder="Enter 10 digits..." />
+    <div class="keypad" id="keypad"></div>
+    <div id="message"></div>
+
+    <div class="controls">
+      <button id="resetBtn">Reset</button>
+      <button id="submitBtn">Submit</button>
+    </div>
+  </div>
+
+  <script>
+    const phoneInput = document.getElementById('phone');
+    const keypad = document.getElementById('keypad');
+    const timerDisplay = document.getElementById('timer');
+    const message = document.getElementById('message');
+    const resetBtn = document.getElementById('resetBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const gameContainer = document.getElementById('gameContainer');
+
+    const totalNumbers = 10;
+    const allNumbers = ['0','1','2','3','4','5','6','7','8','9'];
+    let timeLeft = 3;
+    let timer;
+    let gameOver = false;
+
+    function createKeypad() {
+      keypad.replaceChildren();
+
+      const shuffled = [...allNumbers].sort(() => Math.random() - 0.5);
+      shuffled.forEach(digit => {
+        const button = document.createElement('button');
+        button.className = 'key';
+        button.textContent = digit;
+
+        button.addEventListener('click', () => {
+          if (phoneInput.value.length < totalNumbers && !gameOver) {
+            phoneInput.value += digit;
+            checkForWin();
+
+            if (!gameOver) {
+              resetTimer();
+              createKeypad();
+            }
+          }
+        });
+
+        keypad.appendChild(button);
+      });
+    }
+
+    function startTimer() {
+      timeLeft = 3;
+      timerDisplay.textContent = timeLeft;
+
+      timer = setInterval(() => {
+        timeLeft--;
+        timerDisplay.textContent = timeLeft;
+
+        if (timeLeft === 0) {
+          clearInterval(timer);
+          phoneInput.value = '';
+          message.textContent = 'Not fast enough! Start over.';
+          createKeypad();
+        }
+      }, 1000);
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      startTimer();
+      message.textContent = '';
+    }
+
+    function checkForWin() {
+      if (phoneInput.value.length === totalNumbers) {
+        clearInterval(timer);
+        message.textContent = 'You entered all digits!';
+        disableKeypad();
+        gameOver = true;
+      }
+    }
+
+    function disableKeypad() {
+      const buttons = document.querySelectorAll('.key');
+      buttons.forEach(btn => btn.disabled = true);
+    }
+
+    function resetGame() {
+      phoneInput.value = '';
+      message.textContent = '';
+      clearInterval(timer);
+      gameOver = false;
+      createKeypad();
+      startTimer();
+
+      gameContainer.classList.add('shake');
+    }
+
+    function checkPhoneNumber() {
+      clearInterval(timer);
+      gameOver = true;
+
+      if (phoneInput.value.length === 10) {
+        message.textContent = 'Looks like a valid number!';
+      } else {
+        message.textContent = 'Not enough digits. Try again.';
+      }
+
+      disableKeypad();
+      
+      gameContainer.classList.remove('shake');
+    }
+
+    resetBtn.addEventListener('click', resetGame);
+    submitBtn.addEventListener('click', checkPhoneNumber);
+    phoneInput.addEventListener('keydown', e => e.preventDefault());
+    phoneInput.addEventListener('paste', e => e.preventDefault());
+
+    gameContainer.classList.add('shake');
+    createKeypad();
+    startTimer();
+  </script>
+</body>
+</html>
